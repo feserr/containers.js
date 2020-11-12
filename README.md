@@ -16,7 +16,7 @@
 
 <a name="about"></a>
 
-# containers.js 0.2.0
+# containers.js 0.1.0
 
 WASM implementation of common containers.
 
