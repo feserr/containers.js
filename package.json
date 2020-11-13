@@ -2,13 +2,14 @@
   "name": "containers.js",
   "version": "0.1.0",
   "description": "WASM implementation of common containers.",
+  "repository": "https://github.com/feserr/containers.js",
   "scripts": {
     "test": "cp dist/containers.* test/libs; mocha --ui bdd",
     "build": "python build_wasm.py -i containers_wasm/src/*.cpp -o dist/containers.js"
   },
   "keywords": [],
   "author": "Elías Serrano",
-  "license": "BSD 2-Clause",
+  "license": "BSD-2-Clause",
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",

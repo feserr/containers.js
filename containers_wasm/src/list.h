@@ -11,7 +11,7 @@
 
 namespace ContainersWasm {
 /**
- * @brief ArrayList is a sequence of containers.
+ * @brief list is a sequence of containers.
  *
  * @tparam T Type of the elements.
  */
@@ -19,12 +19,12 @@ template <class T>
 class List {
  public:
   /**
-   * @brief Construct a new ArrayList object.
+   * @brief Construct a new list object.
    */
   List() : list_(), list_iterator_() {}
 
   /**
-   * @brief Destroy the ArrayList object.
+   * @brief Destroy the list object.
    */
   ~List() { list_.clear(); }
 

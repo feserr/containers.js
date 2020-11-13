@@ -1,0 +1,23 @@
+# Builds
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Python virtual enviroment
+venv/
+
+# OS specific files
+.DS_Store
+
+# Log files
+*.log
+
+# IDEs
+.vscode
+
+# Cache files
+.cache
+.eslintcache
+package-lock.json
