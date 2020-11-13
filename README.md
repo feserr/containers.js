@@ -1,4 +1,10 @@
-# containers.js
+# wasm-containers.js
+
+[![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/feserr/wasm-containers.js#license)
+
+[![Build Status](https://travis-ci.org/feserr/wasm-containers.js.svg?branch=master)](https://travis-ci.org/feserr/wasm-containers.js)
+
+[![Trello URL](https://img.shields.io/badge/trello-wasm-containers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH/wasm-containersjs)
 
 # Index
 
@@ -16,7 +22,7 @@
 
 <a name="about"></a>
 
-# containers.js 0.1.0
+# wasm-containers.js 0.1.0
 
 WASM implementation of common containers.
 
@@ -26,7 +32,7 @@ Version: 0.1.0 - Released: 12th November 2020
 
 ## What's new in 0.1.0?
 
-- Add list class..
+- Add list class.
 
 <a name="how-to-build"></a>
 
@@ -64,7 +70,7 @@ Coming soon...
 
 - If you find a bug then please report it on [GitHub Issues][issues].
 
-- If you have a feature request, or have written a tool or demo that shows containers.js in use, then please get in touch. We'd love to hear from you!
+- If you have a feature request, or have written a tool or demo that shows wasm-containers.js in use, then please get in touch. We'd love to hear from you!
 
 <a name="bugs"></a>
 
@@ -115,4 +121,4 @@ Coming soon...
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[issues]: https://github.com/feserr/containers.js/issues
+[issues]: https://github.com/feserr/wasm-containers.js/issues
