@@ -1,7 +1,6 @@
 # Builds
 dist/
 build/
-test/libs/
 
 # Node modules
 node_modules/

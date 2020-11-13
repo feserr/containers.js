@@ -73,6 +73,32 @@ describe('List', () => {
         list.delete();
       });
     });
+
+    describe('Infinity', () => {
+      it('should return the right added data', () => {
+        const list = new ContainersWasm.List();
+        list.push_back(Infinity);
+        chaiModule.expect(list.size()).to.equal(1);
+        chaiModule.expect(list.front()).to.equal(Infinity);
+        list.delete();
+      });
+    });
+
+    describe('Mixed', () => {
+      it('should return the right added data', () => {
+        const list = new ContainersWasm.List();
+        list.push_back(Infinity);
+        list.push_back(1);
+        list.push_back('Hello world!');
+        chaiModule.expect(list.size()).to.equal(3);
+        chaiModule.expect(list.front()).to.equal(Infinity);
+        list.pop_front();
+        chaiModule.expect(list.front()).to.equal(1);
+        list.pop_front();
+        chaiModule.expect(list.front()).to.equal('Hello world!');
+        list.delete();
+      });
+    });
   });
 
   describe('#push_front()', () => {

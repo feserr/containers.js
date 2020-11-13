@@ -1,0 +1,23 @@
+sudo: true
+language: node_js
+
+node_js:
+  - node
+
+services:
+  - docker
+
+before_install:
+  - docker build -t containers.js .
+
+script:
+  - docker run --rm containers.js ./containers.js/build_and_test.sh
+
+branches:
+  only:
+    - master
+    - dev
+
+notifications:
+  email:
+    on_success: never
