@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/feserr/wasm-containers.js.svg?branch=master)](https://travis-ci.org/feserr/wasm-containers.js)
 
-[![Trello URL](https://img.shields.io/badge/trello-wasm-containers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH/wasm-containersjs)
+[![Trello URL](https://img.shields.io/badge/trello-wasmcontainers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH/wasm-containersjs)
 
 # Index
 
