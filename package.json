@@ -4,8 +4,9 @@
   "description": "WASM implementation of common containers.",
   "repository": "https://github.com/feserr/containers.js",
   "scripts": {
-    "test": "cp dist/containers.* test/libs; mocha --ui bdd",
-    "build": "python build_wasm.py -i containers_wasm/src/*.cpp -o dist/containers.js"
+    "build": "python build_wasm.py -i containers_wasm/src/*.cpp -o dist/containers.js",
+    "debug": "python build_wasm.py -d -i containers_wasm/src/*.cpp -o dist/containers.js",
+    "test": "cp dist/containers.* test/libs; mocha --ui bdd"
   },
   "keywords": [],
   "author": "Elías Serrano",
