@@ -9,24 +9,25 @@
     "webassembly"
   ],
   "license": "BSD-2-Clause",
-  "main": "./lib/container.js",
+  "main": "./index.js",
   "files": [
     "LICENSE",
     "README.md",
+    "index.js",
     "lib"
   ],
-  "homepage": "https://github.com/feserr/containers.js",
+  "homepage": "https://github.com/feserr/wasm-containers.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/feserr/containers.js"
+    "url": "https://github.com/feserr/wasm-containers.js"
   },
   "bugs": {
-    "url": "https://github.com/feserr/containers.js/issues"
+    "url": "https://github.com/feserr/wasm-containers.js/issues"
   },
   "scripts": {
-    "build": "python build_wasm.py -i containers_wasm/src/*.cpp -o dist/containers.js",
-    "debug": "python build_wasm.py -d -i containers_wasm/src/*.cpp -o dist/containers.js",
-    "test": "cp dist/containers.* test/libs; mocha --ui bdd"
+    "build": "python3 build_wasm.py -i containers_wasm/src/*.cpp -o dist/wasm-containers.js",
+    "debug": "python3 build_wasm.py -d -i containers_wasm/src/*.cpp -o dist/wasm-containers.js",
+    "test": "cp dist/wasm-containers.* test/libs; mocha --ui bdd"
   },
   "devDependencies": {
     "chai": "^4.2.0",
