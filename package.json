@@ -1,6 +1,6 @@
 {
   "name": "wasm-containers.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Elías Serrano <feserr3@gmail.com>",
   "description": "WASM implementation of common containers.",
   "keywords": [
