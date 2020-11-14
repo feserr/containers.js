@@ -22,7 +22,7 @@ describe('List', () => {
       chaiModule = require('chai');
 
       return new Promise((done) => {
-        const containersModule = require('./libs/containers.js');
+        const containersModule = require('./libs/wasm-containers.js');
         containersModule().then(function(Module) {
           ContainersWasm = Module;
           done();
