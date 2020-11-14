@@ -29,9 +29,11 @@ Version: 0.1.1 - Released: 12th November 2020
 
 <a name="whats-new"></a>
 
-## What's new in 0.1.0?
+## What's new in 0.1.1?
 
-- Add list class.
+- TravisCI files.
+- Dockerfiles to run it in Docker. Used for TravisCI.
+- Fix some issues to be uses as a npm library package.
 
 <a name="how-to-build"></a>
 
