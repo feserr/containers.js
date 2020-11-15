@@ -1,5 +1,10 @@
 This document describes changes between tagged wasm-contianers.js versions.
 
+v0.2.0 (15/11/2020)
+-------------------
+- Add map class.
+- Add doxygen documentation to the classes.
+
 v0.1.1 (14/11/2020)
 -------------------
 - TravisCI files.

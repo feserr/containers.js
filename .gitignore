@@ -2,6 +2,7 @@
 dist/
 build/
 test/libs/
+docs/_build
 
 # Node modules
 node_modules/

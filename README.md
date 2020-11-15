@@ -21,19 +21,18 @@
 
 <a name="about"></a>
 
-# wasm-containers.js 0.1.1
+# wasm-containers.js 0.2.0
 
 WASM implementation of common containers.
 
-Version: 0.1.1 - Released: 12th November 2020
+Version: 0.2.0 - Released: 14th November 2020
 
 <a name="whats-new"></a>
 
-## What's new in 0.1.1?
+## What's new in 0.2.0?
 
-- TravisCI files.
-- Dockerfiles to run it in Docker. Used for TravisCI.
-- Fix some issues to be uses as a npm library package.
+- Add map class.
+- Add doxygen documentation to the classes.
 
 <a name="how-to-build"></a>
 

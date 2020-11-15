@@ -1,6 +1,10 @@
 # Builds
 dist/
 build/
+lib/
+
+# Docs
+docs/
 
 # Node modules
 node_modules/
