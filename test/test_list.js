@@ -3,13 +3,11 @@
  * License: https://github.com/feserr/containers.js#license
  */
 
-const IS_NODE = (typeof process === 'object' && typeof require === 'function');
-
-let chaiModule = null;
-let ContainersWasm = null;
-
-if (!IS_NODE) {
-  chaiModule = chai;
+if (typeof process === 'object' && typeof require === 'function') {
+  var IS_NODE = true; // eslint-disable-line no-var
+  var chaiModule = null; // eslint-disable-line no-var
+  var ContainersWasm = null; // eslint-disable-line no-var
+} else {
   containersModule().then(function(Module) {
     ContainersWasm = Module;
     mocha.run();
@@ -40,6 +38,8 @@ describe('List', () => {
       }
 
       chaiModule.expect(list.size()).to.equal(iterations);
+
+      list.delete();
     });
   });
 
@@ -68,8 +68,10 @@ describe('List', () => {
       it('should return the right added data', () => {
         const list = new ContainersWasm.List();
         list.push_back('Hello world!');
+
         chaiModule.expect(list.size()).to.equal(1);
         chaiModule.expect(list.front()).to.equal('Hello world!');
+
         list.delete();
       });
     });
@@ -78,8 +80,10 @@ describe('List', () => {
       it('should return the right added data', () => {
         const list = new ContainersWasm.List();
         list.push_back(Infinity);
+
         chaiModule.expect(list.size()).to.equal(1);
         chaiModule.expect(list.front()).to.equal(Infinity);
+
         list.delete();
       });
     });
@@ -90,12 +94,15 @@ describe('List', () => {
         list.push_back(Infinity);
         list.push_back(1);
         list.push_back('Hello world!');
+
         chaiModule.expect(list.size()).to.equal(3);
         chaiModule.expect(list.front()).to.equal(Infinity);
+
         list.pop_front();
         chaiModule.expect(list.front()).to.equal(1);
         list.pop_front();
         chaiModule.expect(list.front()).to.equal('Hello world!');
+
         list.delete();
       });
     });
@@ -126,8 +133,10 @@ describe('List', () => {
       it('should return the right added data', () => {
         const list = new ContainersWasm.List();
         list.push_front('Hello world!');
+
         chaiModule.expect(list.size()).to.equal(1);
         chaiModule.expect(list.front()).to.equal('Hello world!');
+
         list.delete();
       });
     });
@@ -162,7 +171,10 @@ describe('List', () => {
         list.push_back(num);
       }
 
+      list.begin();
       chaiModule.expect(list.end()).to.equal(false);
+
+      list.delete();
     });
 
     it('should return true if is the end', () => {
@@ -172,6 +184,8 @@ describe('List', () => {
       list.next_iterator();
 
       chaiModule.expect(list.end()).to.equal(true);
+
+      list.delete();
     });
   });
 
@@ -184,6 +198,8 @@ describe('List', () => {
       list.next_iterator();
 
       chaiModule.expect(list.end()).to.equal(true);
+
+      list.delete();
     });
   });
 });

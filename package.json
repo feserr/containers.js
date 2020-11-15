@@ -1,6 +1,6 @@
 {
   "name": "wasm-containers.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Elías Serrano <feserr3@gmail.com>",
   "description": "WASM implementation of common containers.",
   "keywords": [
@@ -30,6 +30,7 @@
     "test": "cp dist/wasm-containers.* test/libs; mocha --ui bdd"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "eslint": "^7.13.0",
     "eslint-config-google": "^0.14.0",

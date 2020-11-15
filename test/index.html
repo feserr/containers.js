@@ -17,8 +17,13 @@
       mocha.checkLeaks();
     </script>
 
-    <script src="./libs/containers.js"></script>
+    <script src="./libs/wasm-containers.js"></script>
 
+    <script>
+      var IS_NODE = false;
+      var chaiModule = chai;
+    </script>
     <script src="./test_list.js"></script>
+    <script src="./test_map.js"></script>
   </body>
 </html>
