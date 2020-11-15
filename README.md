@@ -9,7 +9,6 @@
 # Index
 
 - [About](#about)
-- [What's New?](#whats-new)
 - [How to Build](#how-to-build)
 - [How to Run](#how-to-run)
 - [Requirements](#requirements)
@@ -25,14 +24,7 @@
 
 WASM implementation of common containers.
 
-Version: 0.2.0 - Released: 14th November 2020
-
-<a name="whats-new"></a>
-
-## What's new in 0.2.0?
-
-- Add map class.
-- Add doxygen documentation to the classes.
+Version: 0.2.0 - Released: 15th November 2020
 
 <a name="how-to-build"></a>
 
