@@ -1,8 +1,8 @@
 # extra-containers.js
 
 [![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/feserr/extra-containers.js#license)
-
 [![Build Status](https://travis-ci.org/feserr/extra-containers.js.svg?branch=master)](https://travis-ci.org/feserr/extra-containers.js)
+[![Coverage Status](https://coveralls.io/repos/github/feserr/extra-containers.js/badge.svg?branch=js_lib)](https://coveralls.io/github/feserr/extra-containers.js?branch=js_lib)
 
 [![Trello URL](https://img.shields.io/badge/trello-extracontainers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH)
 
