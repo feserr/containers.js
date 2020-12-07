@@ -13,6 +13,9 @@ before_install:
 script:
   - docker run --rm containers.js ./containers.js/build_and_test.sh
 
+after_success:
+- npm run coveralls
+
 branches:
   only:
     - master

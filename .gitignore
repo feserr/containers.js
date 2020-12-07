@@ -4,6 +4,12 @@ build/
 test/libs/
 docs/_build
 
+docs/
+
+# Coverage
+.nyc*/
+coverage/
+
 # Node modules
 node_modules/
 

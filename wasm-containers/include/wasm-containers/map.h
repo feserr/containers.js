@@ -4,35 +4,19 @@
  * License: https://github.com/feserr/containers.js#license
  */
 
-#ifndef CONTAINERS_WASM_MAP_H_
-#define CONTAINERS_WASM_MAP_H_
+#ifndef WASM_CONTAINERS_MAP_H_
+#define WASM_CONTAINERS_MAP_H_
 
-#include <map>
+#include <unordered_map>
 
-namespace ContainersWasm {
-template <class U>
-class MapIterator {
- public:
-  MapIterator(bool f, U v) : found(f), value(v) {}
-
-  bool getFound() const { return found; }
-  void setFound(const bool found_) { found = found_; }
-
-  U getValue() const { return value; }
-  void setValue(const U value_) { value = value_; }
-
- private:
-  bool found;
-  U value;
-};
-
+namespace WasmContainers {
 /**
- * @brief map is a sequence of containers.
+ * @brief Map is a container that store that assign a key to the data.
  *
- * @tparam T Type of the key.
- * @tparam U Type of the data.
+ * @tparam KeyType Type of the key.
+ * @tparam ValueType Type of the data.
  */
-template <class T, class U>
+template <class KeyType, class ValueType>
 class Map {
  public:
   /**
@@ -63,23 +47,25 @@ class Map {
    * @param[in] key The key of the element.
    * @param[in] value The value of the element.
    */
-  void emplace(const T key, const U value) { map_.emplace(key, value); }
+  void emplace(const KeyType key, const ValueType value) {
+    map_.emplace(key, value);
+  }
 
   /**
    * @brief Remove an element from the map.
    *
-   * @param key The key of the element to remove.
+   * @param[in] key The key of the element to remove.
    */
-  void erase(const T key) { map_.erase(key); }
+  void erase(const KeyType key) { map_.erase(key); }
 
   /**
    * @brief Finds the element in the map if present, otherwise it returns an
    *        undefined value.
    *
    * @param[in] key The key to search.
-   * @return U The data of the element.
+   * @return ValueType The data of the element.
    */
-  U find(const T key) const { return map_.find(key)->second; }
+  ValueType find(const KeyType key) const { return map_.find(key)->second; }
 
   /**
    * @brief Start the iterator.
@@ -97,9 +83,9 @@ class Map {
   /**
    * @brief Return the element of the current iteration position.
    *
-   * @return U The element from the iteration.
+   * @return ValueType The element from the iteration.
    */
-  U iterator_value() const { return map_iterator_->second; }
+  ValueType iterator_value() const { return map_iterator_->second; }
 
   /**
    * @brief Move the iterator to the next position.
@@ -111,9 +97,9 @@ class Map {
   }
 
  private:
-  std::map<T, U> map_;
-  typename std::map<T, U>::iterator map_iterator_;
+  std::unordered_map<KeyType, ValueType> map_;
+  typename std::unordered_map<KeyType, ValueType>::iterator map_iterator_;
 };
-}  // namespace ContainersWasm
+}  // namespace WasmContainers
 
-#endif  // CONTAINERS_WASM_MAP_H_
+#endif  // WASM_CONTAINERS_MAP_H_

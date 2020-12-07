@@ -1,10 +1,10 @@
-# wasm-containers.js
+# extra-containers.js
 
-[![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/feserr/wasm-containers.js#license)
+[![License](https://img.shields.io/badge/license-BSD--2%20clause-blue.svg)](https://github.com/feserr/extra-containers.js#license)
 
-[![Build Status](https://travis-ci.org/feserr/wasm-containers.js.svg?branch=master)](https://travis-ci.org/feserr/wasm-containers.js)
+[![Build Status](https://travis-ci.org/feserr/extra-containers.js.svg?branch=master)](https://travis-ci.org/feserr/extra-containers.js)
 
-[![Trello URL](https://img.shields.io/badge/trello-wasmcontainers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH)
+[![Trello URL](https://img.shields.io/badge/trello-extracontainers.js-green.svg?longCache=true&style=for-the-badge)](https://trello.com/b/tuCBurqH)
 
 # Index
 
@@ -20,7 +20,7 @@
 
 <a name="about"></a>
 
-# wasm-containers.js 0.2.0
+# extra-containers.js 0.2.0
 
 WASM implementation of common containers.
 
@@ -59,7 +59,7 @@ you can assign it to a variable or use it there. For example:
 
 To use it as a NodeJS module you will have to install the depency using `npm`:
 ```bash
-npm install wasm-containers.js --save
+npm install extra-containers.js --save
 ```
 
 Also, you can download the files from the `lib` folder, keep in mind that they
@@ -72,7 +72,7 @@ so, the next example show how to do it:
 ```js
 let ContainersWasm = null;
 
-const containersModule = require('wasm-containers.js');
+const containersModule = require('extra-containers.js');
 containersModule().then(function(Module) {
   ContainersWasm = Module;
   main();
@@ -103,7 +103,7 @@ Then you need to import the file before the script that is going to use, for
 example:
 
 ```html
-<script src="wasm-containers.js"></script>
+<script src="extra-containers.js"></script>
 <script src="./app.js"></script>
 ```
 
@@ -158,7 +158,7 @@ function main() {
 
 - If you find a bug then please report it on [GitHub Issues][issues].
 
-- If you have a feature request, or have written a tool or demo that shows wasm-containers.js in use, then please get in touch. We'd love to hear from you!
+- If you have a feature request, or have written a tool or demo that shows extra-containers.js in use, then please get in touch. We'd love to hear from you!
 
 <a name="bugs"></a>
 
@@ -203,4 +203,4 @@ Please add them to the [Issue Tracker][issues] with as much info as possible, es
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-[issues]: https://github.com/feserr/wasm-containers.js/issues
+[issues]: https://github.com/feserr/extra-containers.js/issues

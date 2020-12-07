@@ -3,13 +3,13 @@
  * License: https://github.com/feserr/containers.js#license
  */
 
-#include "list.h"
+#include "../include/wasm-containers/list.h"
 
 #include <emscripten/bind.h>
 #include <emscripten/emscripten.h>
 #include <emscripten/val.h>
 
-namespace ContainersWasm {
+namespace WasmContainers {
 typedef List<emscripten::val> ListBind;
 
 EMSCRIPTEN_BINDINGS(ListBinding) {
@@ -27,4 +27,4 @@ EMSCRIPTEN_BINDINGS(ListBinding) {
       .function("iterator_value", &ListBind::iterator_value)
       .function("next_iterator", &ListBind::next_iterator);
 }
-}  // namespace ContainersWasm
+}  // namespace WasmContainers

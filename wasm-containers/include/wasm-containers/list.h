@@ -4,18 +4,18 @@
  * License: https://github.com/feserr/containers.js#license
  */
 
-#ifndef CONTAINERS_WASM_LIST_H_
-#define CONTAINERS_WASM_LIST_H_
+#ifndef WASM_CONTAINERS_LIST_H_
+#define WASM_CONTAINERS_LIST_H_
 
 #include <list>
 
-namespace ContainersWasm {
+namespace WasmContainers {
 /**
- * @brief list is a sequence of containers.
+ * @brief List is a container that store the data in sequence.
  *
- * @tparam T Type of the elements.
+ * @tparam ValueType Type of the elements.
  */
-template <class T>
+template <class ValueType>
 class List {
  public:
   /**
@@ -40,14 +40,14 @@ class List {
    *
    * @param[in] value The new element.
    */
-  void push_back(const T value) { list_.push_back(value); }
+  void push_back(const ValueType value) { list_.push_back(value); }
 
   /**
    * @brief Inserts a new element at the beginning of the list.
    *
    * @param[in] value The new element.
    */
-  void push_front(const T value) { list_.push_front(value); }
+  void push_front(const ValueType value) { list_.push_front(value); }
 
   /**
    * @brief Remove the last element of the list.
@@ -62,16 +62,16 @@ class List {
   /**
    * @brief Return the first element of the list.
    *
-   * @return T The first element.
+   * @return ValueType The first element.
    */
-  T front() const { return list_.front(); }
+  ValueType front() const { return list_.front(); }
 
   /**
    * @brief Returns the last element of the list.
    *
-   * @return T The last element.
+   * @return ValueType The last element.
    */
-  T back() const { return list_.back(); }
+  ValueType back() const { return list_.back(); }
 
   /**
    * @brief Start the iterator.
@@ -89,9 +89,9 @@ class List {
   /**
    * @brief Return the element of the current iteration position.
    *
-   * @return T The element from the iteration.
+   * @return ValueType The element from the iteration.
    */
-  T iterator_value() const { return *list_iterator_; }
+  ValueType iterator_value() const { return *list_iterator_; }
 
   /**
    * @brief Move the iterator to the next position.
@@ -103,9 +103,9 @@ class List {
   }
 
  private:
-  std::list<T> list_;
-  typename std::list<T>::iterator list_iterator_;
+  std::list<ValueType> list_;
+  typename std::list<ValueType>::iterator list_iterator_;
 };
-}  // namespace ContainersWasm
+}  // namespace WasmContainers
 
-#endif  // CONTAINERS_WASM_LIST_H_
+#endif  // WASM_CONTAINERS_LIST_H_

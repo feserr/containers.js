@@ -1,0 +1,42 @@
+{
+  "name": "wasm-containers.js",
+  "version": "0.2.0",
+  "author": "Elías Serrano <feserr3@gmail.com>",
+  "description": "WASM implementation of common containers.",
+  "keywords": [
+    "containers",
+    "javascript",
+    "webassembly"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "./index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib"
+  ],
+  "homepage": "https://github.com/feserr/wasm-containers.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feserr/wasm-containers.js"
+  },
+  "bugs": {
+    "url": "https://github.com/feserr/wasm-containers.js/issues"
+  },
+  "scripts": {
+    "build": "python3 build_wasm.py -i src/*.cpp -o dist/wasm-containers.js",
+    "debug": "python3 build_wasm.py -d -i src/*.cpp -o dist/wasm-containers.js",
+    "test": "cp dist/wasm-containers.* test/libs; mocha --ui bdd"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.13.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-compat": "^3.8.0",
+    "mocha": "^8.2.1",
+    "request": "^2.88.2"
+  }
+}

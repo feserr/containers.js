@@ -37,7 +37,9 @@ def execute_cmdline(cmd, working_dir):
 def compile(debug, input_files, output_file):
     emcc_args = [
         '--llvm-opts', '3',
+        '-flto',
         '--bind',
+        '-s', 'FILESYSTEM=0',
         '-s', 'MODULARIZE=1',
         '-s', 'EXPORT_NAME=containersModule',
         '-s', 'ENVIRONMENT="web,worker,node"',
@@ -56,6 +58,9 @@ def compile(debug, input_files, output_file):
     else:
         emcc_args += [
             '-O3',
+            '--closure 1',
+            '-DEMSCRIPTEN_HAS_UNBOUND_TYPE_NAMES=0',
+            '-fno-rtti -fno-exceptions'
         ]
 
     build_cmd = "em++ " + \
