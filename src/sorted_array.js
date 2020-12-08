@@ -16,17 +16,17 @@ class SortedArray {
    * @memberof SortedArray
    */
   constructor() {
-    /** @private {any[]} */
+    /** @private @type {any[]} */
     this.arrayData = [];
 
-    /** @private {Map<any, Number>} */
+    /** @private @type {Map<any, number>} */
     this.arrayIndex = new Map();
   }
 
   /**
    * Returns the size of the container.
    *
-   * @return {Number} The size of the container.
+   * @return {number} The size of the container.
    * @memberof SortedArray
    */
   size() {
@@ -54,7 +54,7 @@ class SortedArray {
    * Check if the data exist in the container.
    *
    * @param {any} data
-   * @return {Number} The position of the element if exist, otherwise -1.
+   * @return {number} The position of the element if exist, otherwise -1.
    * @memberof SortedArray
    */
   exist(data) {

@@ -41,14 +41,14 @@ class List {
     /** @private @type {any} */
     this.last = null;
 
-    /** @private @type {Number} */
+    /** @private @type {number} */
     this.num = 0;
   }
 
   /**
    * Returns the number of elements in the list.
    *
-   * @return {Number} The number of elements.
+   * @return {number} The number of elements.
    * @memberof List
    */
   size() {
@@ -118,7 +118,7 @@ class List {
   /**
    * Execute the provide function once for each element of the container.
    *
-   * @param {Function} callback
+   * @param {function} callback
    * @memberof List
    */
   forEach(callback) {

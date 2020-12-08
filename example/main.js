@@ -1,4 +1,4 @@
-const extraContainers = require('../lib/extra-containers');
+const extraContainers = require('extra-containers.js');
 
 const sortedArray = new extraContainers.SortedArray();
 sortedArray.push(1);

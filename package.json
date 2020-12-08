@@ -1,6 +1,6 @@
 {
   "name": "extra-containers.js",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "author": "Elías Serrano <feserr3@gmail.com>",
   "description": "Extra common containers for JS.",
   "keywords": [
@@ -8,7 +8,7 @@
     "javascript"
   ],
   "license": "BSD-2-Clause",
-  "main": "./src/index.js",
+  "main": "./lib/extra-containers.js",
   "files": [
     "LICENSE",
     "README.md",
