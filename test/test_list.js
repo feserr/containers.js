@@ -3,203 +3,79 @@
  * License: https://github.com/feserr/containers.js#license
  */
 
-if (typeof process === 'object' && typeof require === 'function') {
-  var IS_NODE = true; // eslint-disable-line no-var
-  var chaiModule = null; // eslint-disable-line no-var
-  var ContainersWasm = null; // eslint-disable-line no-var
-} else {
-  containersModule().then(function(Module) {
-    ContainersWasm = Module;
-    mocha.run();
-  });
-}
+import {expect} from 'chai';
+import {List} from '../src/index';
 
 describe('List', () => {
-  before(() => {
-    if (IS_NODE) {
-      chaiModule = require('chai');
-
-      return new Promise((done) => {
-        const containersModule = require('./libs/wasm-containers.js');
-        containersModule().then(function(Module) {
-          ContainersWasm = Module;
-          done();
-        });
-      });
-    }
-  });
-
   describe('#size()', () => {
+    it('should return the right empty size', () => {
+      const list = new List();
+      expect(list.size()).to.equal(0);
+    });
+
     it('should return the right size', () => {
-      const list = new ContainersWasm.List();
-      const iterations = 100;
-      for (let num = 0; num < iterations; ++num) {
-        list.push_back(num);
+      const list = new List();
+      list.pushBack(1);
+      list.pushBack(2);
+      expect(list.size()).to.equal(2);
+    });
+  });
+
+  describe('#pushFront()', () => {
+    it('should return the right data added', () => {
+      const list = new List();
+      const size = 100;
+      for (let i = 0; i < size; ++i) {
+        list.pushFront(i);
       }
 
-      chaiModule.expect(list.size()).to.equal(iterations);
-
-      list.delete();
-    });
-  });
-
-  describe('#push_back()', () => {
-    describe('Number', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        const iterations = 100;
-        for (let num = 0; num < iterations; ++num) {
-          list.push_back(num);
-        }
-
-        chaiModule.expect(list.size()).to.equal(iterations);
-
-        let itNum = 0;
-        while (list.size() !== 0) {
-          chaiModule.expect(list.front()).to.equal(itNum++);
-          list.pop_front();
-        }
-
-        list.delete();
-      });
-    });
-
-    describe('String', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        list.push_back('Hello world!');
-
-        chaiModule.expect(list.size()).to.equal(1);
-        chaiModule.expect(list.front()).to.equal('Hello world!');
-
-        list.delete();
-      });
-    });
-
-    describe('Infinity', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        list.push_back(Infinity);
-
-        chaiModule.expect(list.size()).to.equal(1);
-        chaiModule.expect(list.front()).to.equal(Infinity);
-
-        list.delete();
-      });
-    });
-
-    describe('Mixed', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        list.push_back(Infinity);
-        list.push_back(1);
-        list.push_back('Hello world!');
-
-        chaiModule.expect(list.size()).to.equal(3);
-        chaiModule.expect(list.front()).to.equal(Infinity);
-
-        list.pop_front();
-        chaiModule.expect(list.front()).to.equal(1);
-        list.pop_front();
-        chaiModule.expect(list.front()).to.equal('Hello world!');
-
-        list.delete();
+      expect(list.size()).to.equal(100);
+      let valueIt = 99;
+      list.forEach((value) => {
+        expect(value).to.equal(valueIt--);
       });
     });
   });
 
-  describe('#push_front()', () => {
-    describe('Number', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        const iterations = 100;
-        for (let num = 0; num < iterations; ++num) {
-          list.push_front(num);
-        }
-
-        chaiModule.expect(list.size()).to.equal(iterations);
-
-        let itNum = iterations - 1;
-        while (list.size() !== 0) {
-          chaiModule.expect(list.front()).to.equal(itNum--);
-          list.pop_front();
-        }
-
-        list.delete();
-      });
-    });
-
-    describe('String', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        list.push_front('Hello world!');
-
-        chaiModule.expect(list.size()).to.equal(1);
-        chaiModule.expect(list.front()).to.equal('Hello world!');
-
-        list.delete();
-      });
-    });
-  });
-
-  describe('#iterator_value()', () => {
-    describe('Number', () => {
-      it('should return the right added data', () => {
-        const list = new ContainersWasm.List();
-        const iterations = 100;
-        for (let num = 0; num < iterations; ++num) {
-          list.push_back(num);
-        }
-
-        chaiModule.expect(list.size()).to.equal(iterations);
-
-        let itNum = 0;
-        for (list.begin(); !list.end(); list.next_iterator()) {
-          chaiModule.expect(list.iterator_value()).to.equal(itNum++);
-        }
-
-        list.delete();
-      });
-    });
-  });
-
-  describe('#end()', () => {
-    it('should return true if is not the end', () => {
-      const list = new ContainersWasm.List();
-      const iterations = 100;
-      for (let num = 0; num < iterations; ++num) {
-        list.push_back(num);
+  describe('#pushBack()', () => {
+    it('should return the right data added', () => {
+      const list = new List();
+      const size = 100;
+      for (let i = 0; i < size; ++i) {
+        list.pushBack(i);
       }
 
-      list.begin();
-      chaiModule.expect(list.end()).to.equal(false);
-
-      list.delete();
-    });
-
-    it('should return true if is the end', () => {
-      const list = new ContainersWasm.List();
-      list.push_back(1);
-      list.begin();
-      list.next_iterator();
-
-      chaiModule.expect(list.end()).to.equal(true);
-
-      list.delete();
+      expect(list.size()).to.equal(100);
+      let valueIt = 0;
+      list.forEach((value) => {
+        expect(value).to.equal(valueIt++);
+      });
     });
   });
 
-  describe('#next_iterator()', () => {
-    it('should not got beyond the end', () => {
-      const list = new ContainersWasm.List();
-      list.push_back(1);
-      list.begin();
-      list.next_iterator();
-      list.next_iterator();
+  describe('#back()', () => {
+    it('should return the right data added', () => {
+      const list = new List();
+      const size = 100;
+      for (let i = 0; i < size; ++i) {
+        list.pushBack(i);
+      }
 
-      chaiModule.expect(list.end()).to.equal(true);
+      expect(list.size()).to.equal(100);
+      expect(list.front()).to.equal(0);
+    });
+  });
 
-      list.delete();
+  describe('#front()', () => {
+    it('should return the right data added', () => {
+      const list = new List();
+      const size = 100;
+      for (let i = 0; i < size; ++i) {
+        list.pushBack(i);
+      }
+
+      expect(list.size()).to.equal(100);
+      expect(list.back()).to.equal(99);
     });
   });
 });

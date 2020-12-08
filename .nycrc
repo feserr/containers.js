@@ -1,0 +1,24 @@
+{
+  "all": true,
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/*.spec.js"
+  ],
+  "branches": 90,
+  "lines": 90,
+  "functions": 99,
+  "statements": 90,
+  "reporter": [
+    "html",
+    "text-summary",
+    "lcovonly"
+  ],
+  "extension": [
+    ".js"
+  ],
+  "cache": false,
+  "report-dir": "./coverage",
+  "sourceMap": true
+}
