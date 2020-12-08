@@ -22,127 +22,94 @@
 
 # extra-containers.js 0.2.0
 
-WASM implementation of common containers.
+Missing JavaScript common containers.
 
-Version: 0.2.0 - Released: 15th November 2020
+Version: 0.1.0 - Released: 8th November 2020
 
 <a name="how-to-build"></a>
 
 ## How to Build
 
-To build it you need to install Emscripten 2.0.0 or above and activate it; and
-install Python 3.7 or above.
+To build it you need to download all the develop dependencies of the project.
 
-Then, using the npm script we can create the builds file that will be created
+```bash
+npm install
+```
+
+Then, using the npm script we can generate the library file, that will be created
 in a folder called `dist`. So, to do it you need to launch the next commands:
 
 ```bash
-source ${EMSDK_PATH}emsdk_env.sh
-
-npm install
-
 npm run build
 npm run test
 ```
 
-This will build and test the library.
+This will generate and test the library.
 
 <a name="how-to-run"></a>
 
 ## How to Run
 
-When the module is loaded you call to `then` with a function
-with one parameter that will be the loaded module. Then,
-you can assign it to a variable or use it there. For example:
-
 ### NodeJS module
 
 To use it as a NodeJS module you will have to install the depency using `npm`:
 ```bash
-npm install extra-containers.js --save
+npm install -D extra-containers.js
 ```
 
-Also, you can download the files from the `lib` folder, keep in mind that they
-need to be together **always**
+Also, you can download the files from the `lib` folder.
 
-To run you can't do it after require it, you need to wait until the
-WebAssembly code it is loaded. It use the `MODULARIZE` option of Emscripten,
-so, the next example show how to do it:
+Then, to run it we only need to use the `require` function to load it and we
+can start using it. In the next code we can see an example:
 
 ```js
-let ContainersWasm = null;
+const extraContainers = require('../lib/extra-containers');
 
-const containersModule = require('extra-containers.js');
-containersModule().then(function(Module) {
-  ContainersWasm = Module;
-  main();
-});
+const sortedArray = new extraContainers.SortedArray();
+sortedArray.push(1);
+sortedArray.push(2);
 
-/**
- * Main function.
- */
-function main() {
-  const list = new ContainersWasm.List();
-  list.push_back(Infinity);
-  console.log(list.size());
-  console.log(list.front());
-  list.delete();
-}
+console.log(sortedArray.size());
+console.log(sortedArray.exist(1));
+console.log(sortedArray.exist(3));
 ```
-
-As you can see, once the function `then` of the module is done you can
-use the library.
 
 ### Common Javascript
 
 To run it on a common JavaScript code, like a script of a web, you will need
-to download the files from the `lib` folder whenever you want, keep in mind
-that they need to be together **always**.
+to download the files from the `lib` folder whenever you want.
 
 Then you need to import the file before the script that is going to use, for
 example:
 
 ```html
 <script src="extra-containers.js"></script>
-<script src="./app.js"></script>
 ```
 
 To use it you will need to do something similar to the NodeJS
-version. You have to wail until the `then` function is done.
-For example, in the next code we can see a little example:
+version. In the next code we can see a little example:
 
 ```js
-let ContainersWasm = null;
+const sortedArray = new extraContainers.SortedArray();
+sortedArray.push(1);
+sortedArray.push(2);
 
-containersModule().then(function(Module) {
-  ContainersWasm = Module;
-  main();
-});
-
-/**
- * Main function.
- */
-function main() {
-  const list = new ContainersWasm.List();
-  list.push_back(Infinity);
-  console.log(list.size());
-  console.log(list.front());
-  list.delete();
-}
+console.log(sortedArray.size());
+console.log(sortedArray.exist(1));
+console.log(sortedArray.exist(3));
 ```
 
 <a name="requirements"></a>
 
 ## Requirements
 
-- Emscripten version 2.0.0 or above.
-- Python 3.7 or above.
+Coming soon...
 
 <a name="dependencies"></a>
 
 ## Dependencies
 
-- [Emscripten](https://github.com/emscripten-core/emscripten)
+- [Webpack](https://webpack.js.org)
 - [Mocha](https://github.com/mochajs/mocha)
 - [Chai](https://github.com/chaijs/chai)
 

@@ -34,6 +34,7 @@ module.exports = (env, argv) => {
       filename: outputName,
       library: libraryName,
       libraryTarget: 'umd',
+      umdNamedDefine: true,
       globalObject: 'typeof self !== \'undefined\' ? self : this',
     },
   };
