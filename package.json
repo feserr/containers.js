@@ -1,6 +1,6 @@
 {
   "name": "extra-containers.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Elías Serrano <feserr3@gmail.com>",
   "description": "Extra common containers for JS.",
   "keywords": [
@@ -30,9 +30,9 @@
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
-    "@babel/register": "^7.12.1",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/register": "^7.12.10",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-add-module-exports": "^1.0.4",
@@ -46,7 +46,8 @@
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.1.0",
     "request": "^2.88.2",
-    "webpack": "^5.10.0",
+    "underscore": "^1.12.0",
+    "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
   }
 }

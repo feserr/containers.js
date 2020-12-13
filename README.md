@@ -24,7 +24,7 @@
 
 Missing JavaScript common containers.
 
-Version: 0.1.0 - Released: 8th November 2020
+Version: 0.1.1 - Released: 13th November 2020
 
 <a name="how-to-build"></a>
 
